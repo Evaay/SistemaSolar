@@ -49,3 +49,7 @@ Para poder trabajar mejor, se optó por dividir parte del código principal en d
 * Sun(): Crea el Sol con su textura y velocidad de rotación.
 * Sphere(): Permite crear planetas adicionales de forma interactiva al hacer clic, con trayectoria orbital calculada y valores de estilos aleatorios.
 * asteroids(): Genera el cinturón de asteroides del sistema solar.
+* updateInfoPanel(planetName): Actualiza el panel de información en pantalla con los datos del planeta seleccionado.
+* deleteplanet(): Elimina todos los nuevos planetas creados al hacer click.
+* restoreCameraPos(): Restaura la posición inicial de la cámara y esta apuntará al sol.
+
