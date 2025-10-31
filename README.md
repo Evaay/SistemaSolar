@@ -39,7 +39,7 @@ Para esta práctica, se ha decidido realizar el Sistema solar con sus planetas, 
   * **Crear nuevos planetas**: permite colocar planetas adicionales haciendo clic en la escena.
   * **Eliminar planetas creados**: borra todos los planetas generados dinámicamente junto con sus órbitas.
  
-### Estructura del código
+## Estructura del código
 
 Para poder trabajar mejor, se optó por dividir parte del código principal en diferentes archivos. Algunas funciones que se llaman desde el código principal y se encuentran en otro archivo, tienen el mismo nombre que sus archivos js correspondientes. Aquí hay un breve resumen de las nuevas funciones:
 * initElements(): Incializa todos los elementos del sistema solar completos, exceptuando el cinturón de asteroides.
