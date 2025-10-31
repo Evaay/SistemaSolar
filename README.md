@@ -6,9 +6,12 @@ Para esta práctica, se ha decidido realizar el Sistema solar con sus planetas, 
 ### Planetas
 
 * Cada planeta cuenta con su **textura específica base**.
+* **Mercurio y Venus**
+* Textura base
+* Capa de rugosidad (bump map)
 * **Tierra**:
   * Textura base
-  * Capa de rugosidad (bump map)
+  * Capa de rugosidad 
   * Capa especular (specular map)
   * Capa de nubes
 * **Marte**:
