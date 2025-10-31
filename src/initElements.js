@@ -1,6 +1,4 @@
 import * as THREE from "three";
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 
 //mercury textures
 const mercm = new THREE.TextureLoader().load("public/textures/mercury/mercurymap.jpg");
@@ -59,13 +57,13 @@ export function initElements(Planetas, Lunas, scene, Asteroides) {
 sun = Sun(scene, 1.8, 0xffffff, sunTexture);
 
 // Mercurio
-Planeta("Mercurio", Planetas, scene, scene, 0.25, -4.0, -1.25, 0xffffff, 1.0, 1.0, 0.005, mercm, undefined);
+Planeta("Mercurio", Planetas, scene, scene, 0.25, -4.0, -1.25, 0xffffff, 1.0, 1.0, 0.005, mercm, mercb);
 Planetas[0].userData.mass = "3.285 × 10²³ kg";
 Planetas[0].userData.diameter = "4,879 km";
 Planetas[0].userData.gravity = "3.7 m/s²";
 
 // Venus
-Planeta("Venus", Planetas, scene, scene, 0.45, -7.0, 0.7, 0xffffff, 1.0, 1.0, -0.002, venm, undefined);
+Planeta("Venus", Planetas, scene, scene, 0.45, -7.0, 0.7, 0xffffff, 1.0, 1.0, -0.002, venm, venb);
 Planetas[1].rotation.z = 173.3 * rotationValue;
 Planetas[1].userData.mass = "4.867 × 10²⁴ kg";
 Planetas[1].userData.diameter = "12,104 km";
@@ -283,21 +281,4 @@ export function ringsPlanet(padre,innerRadius,outerRadius,texture=undefined,texa
  const anillos = new THREE.Mesh(geom, material);
  if (angle != undefined){anillos.rotation.x = angle}
  padre.add(anillos);
-}
-
-function createPlanetLabel(nombre) {
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d");
-  context.font = "Bold 60px Arial";
-  context.fillStyle = "white";
-  context.fillText(nombre, 0, 60);
-
-  const texture = new THREE.CanvasTexture(canvas);
-  const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
-  const sprite = new THREE.Sprite(spriteMaterial);
-  sprite.scale.set(2.5, 1.25, 1.0); // tamaño del texto
-  sprite.center.set(0.5, 0); // anclar abajo (mejor para no quedar dentro del planeta)
-
-  sprite.userData.isLabel = true; // marcarlo para actualizar luego
-  return sprite;
 }
